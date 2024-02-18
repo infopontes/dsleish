@@ -1,3 +1,17 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Breed
+
+@admin.register(Breed)
+class BreedAdmin(admin.ModelAdmin):
+    list_display = ('__str__', 'name')
+    # readonly_fields = ('slug', 'created', 'modified')
+    # list_display_links = ('name',)
+    search_fields = ('name',)
+    # list_filter = ('status',)
+    # date_hierarchy = 'created'
+    # ordering = ('-created',)
+    # actions = ('',)
+
+
+# admin.site.register(Race)

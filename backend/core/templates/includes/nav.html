@@ -1,20 +1,26 @@
-<nav class="navbar navbar-expand-md navbar-light bg-success fixed-top fs-5">
-    <a class="navbar-brand" href="{% url 'core:index' %}"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/DNA_icon.svg/70px-DNA_icon.svg.png" class="img-fluid w-10 p-0"> </a>
+<nav class="navbar navbar-expand-md navbar-light bg-info fixed-top fs-5">
+    <!-- <a class="navbar-brand" href="{% url 'core:index' %}">
+      HOME
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/DNA_icon.svg/70px-DNA_icon.svg.png" class="img-fluid w-10 p-0">
+    </a> -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link text-white" href="{% url 'core:index' %}"><strong>DSLeish</strong><span class="sr-only">(current)</span></a>
+        <li class="nav-item active ps-4">
+          <a class="nav-link text-white me-4" href="{% url 'core:index' %}"><strong>DS</strong>Leish</span></a>
+        </li>
+
+        {% if user.is_authenticated %}
+
+        <li class="nav-item">
+          <a class="nav-link text-white" href="" target="_blank">UFPI</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link fw-bold text-white" href="" target="_blank"><strong>UFPI</strong></a>
+          <a class="nav-link text-white" href="" target="_blank">PPGTAIR</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" href="" target="_blank"><strong>PPGTAIR</strong></a>
-        </li>
-        <li class="nav-item dropdown">
+        <!-- <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <strong>API V1</strong>
           </a>
@@ -23,19 +29,35 @@
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="/swagger/">Documents API</a>
           </div>
-        </li>
-  
+        </li> -->
+
+        {% endif %}
+
         <li class="nav-item">
-          <a class="nav-link text-white" href=""><strong>About</strong></a>
-        </li>
-    
-        <li class="nav-item">
-          <a class="nav-link text-white" href="{ url 'core:sobre' %}"><strong>Help</strong></a>
+          <a class="nav-link text-white" href="">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="{ url 'core:contatos' %}"><strong>Contacts</strong></a>
+          <a class="nav-link text-white" href="{ url 'core:sobre' %}">Help</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="{ url 'core:contatos' %}">Contacts</a>
         </li>
   
       </ul>
+      {% if user.is_authenticated %}
+      <div class="collapse navbar-collapse justify-content-end me-4">
+        <ul class="navbar-nav me-4">
+          <li class="nav-item">
+            <a class="nav-link text-white" href="breed/">Breed</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav">
+          <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="border b-0 rounded text-white bg-info">Log Out</button>
+          </form>
+        </ul> 
+      </div>
+      {% endif %}
     </div>
   </nav>

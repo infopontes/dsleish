@@ -2,12 +2,12 @@ from django.urls import path
 
 from backend.breed import views as v
 
-app_name = 'race'
+app_name = 'breed'
 
 urlpatterns = [
-    # path('', v.RaceListView.as_view(), name='race_list'),
-    # path('create/', v.RaceCreateView.as_view(), name='race_create'),
-    # path('<int:pk>/', v.RaceDetailView.as_view(), name='race_detail'),
-    # path('<int:pk>/update/', v.ExpenseUpdateView.as_view(), name='race_update'),
-    # path('<int:pk>/delete/', v.race_delete, name='race_delete'),
+    path('', v.BreedListView.as_view(), name='breed_list'),
+    path('create/', v.BreedCreateView.as_view(), name='breed_create'),
+    path('<uuid:pk>/', v.BreedDetailView.as_view(), name='breed_detail'),
+    path('<uuid:pk>/update/', v.BreedUpdateView.as_view(), name='breed_update'),
+    path('<uuid:pk>/delete/', v.breed_delete, name='breed_delete'),
 ]
