@@ -44,11 +44,12 @@
         </li>
   
       </ul>
-      {% if user.is_authenticated %}
+
       <div class="collapse navbar-collapse justify-content-end me-4">
+        {% if user.is_authenticated %}
         <ul class="navbar-nav me-4">
           <li class="nav-item">
-            <a class="nav-link text-white" href="breed/">Breed</a>
+            <a class="nav-link text-white" href="{% url 'breed:breed_list' %}">Breed</a>
           </li>
         </ul>
         <ul class="navbar-nav">
@@ -56,6 +57,12 @@
             {% csrf_token %}
             <button type="submit" class="border b-0 rounded text-white bg-info">Log Out</button>
           </form>
+        </ul>
+        {% else %}
+        <ul class="navbar-nav me-4">
+          <li class="nav-item">
+            <a class="nav-link text-white" href="accounts/login/">Login</a>
+          </li>
         </ul> 
       </div>
       {% endif %}
