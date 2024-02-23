@@ -1,0 +1,8 @@
+
+# Curso de Django 2 #15: Login e Logout
+https://youtu.be/BA1tGaFmbv0
+
+Curso de Django 2 #16: Registro de Usuários
+https://youtu.be/o19Eki_7UqY
+
+

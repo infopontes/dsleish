@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load widget_tweaks %}
+
+{% block content %}
+<div class="container mt-4 p-5">
+    <br>
+    <br>
+    <br>
+    <div class="row mt-5">
+        <div class="col-md-4 offset-md-4">
+            <div class="card auth-cart">
+                <div class="card-body border rounded">
+                    <h4 class="card-title text-center">Register User</h4>
+            
+                    <form method="POST">
+                        {% csrf_token %}
+                        <input type="hidden" name="next" value="{{ next }}">
+
+                        <label for="">{{ form.username.label }}*</label>
+                        {% render_field form.username placeholder=form.username.label class="form-control" %}
+                        <label for="">{{ form.username.help_text }}</label>
+
+                        <label for="">{{ form.first_name.label }}</label>
+                        {% render_field form.first_name placeholder=form.first_name.label class="form-control" %}
+                        <label for="">{{ form.first_name.help_text }}</label>
+    
+                        <label for="">{{ form.last_name.label }}</label>
+                        {% render_field form.last_name placeholder=form.last_name.label class="form-control" %}
+                        <label for="">{{ form.last_name.help_text }}</label>
+                        
+                        <label for="">{{ form.email.label }}</label>
+                        {% render_field form.email placeholder=form.email.label class="form-control" %}
+                        
+                        <label for="">{{ form.password1.label }}*</label>
+                        {% render_field form.password1 placeholder=form.password1.label class="form-control" %}
+                        <label for="">{{ form.password1.help_text }}</label>
+
+                        <label for="">{{ form.password2.label }}*</label>
+                        {% render_field form.password2 placeholder=form.password2.label class="form-control" %}
+                        <label for="">{{ form.password2.help_text }}</label>
+
+                        {{ form.errors.name }}
+                        
+                        <button class="btn btn-info btn-block" style="width:100%" type="submit">Register</button>
+                        
+                        <p class="change-form-p">Already have an account?<a href="/accounts/login/">Click here!</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div> 
+
+</div>
+
+
+
+{% endblock content %}

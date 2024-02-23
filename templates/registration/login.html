@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load widget_tweaks %}
+
+{% block content %}
+<div class="container mt-4 p-5">
+    <br>
+    <br>
+    <br>
+    <div class="row mt-5">
+        <div class="col-md-4 offset-md-4">
+            <div class="card auth-cart">
+                <div class="card-body border rounded">
+                    <h4 class="card-title text-center">Log in with your credentials</h4>
+                    <br>
+                    <form method="POST">
+                        {% csrf_token %}
+                        <input type="hidden" name="next" value="{{ next }}">
+
+                        <label for="">{{ form.username.label }}*</label>
+                        {% render_field form.username class="form-control" %}
+                        <br>
+
+                        <label for="">{{ form.password.label }}*</label>
+                        {% render_field form.password class="form-control" %}
+                        <br>
+
+                        {{ form.errors.name }}
+                        <button class="btn btn-info btn-block" style="width:100%" type="submit">Login</button>
+                        <br>
+                        <p class="change-form-p">Do you want to create an account? <a href="/accounts/register/">Click here!</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div> 
+
+</div>
+
+
+
+{% endblock content %}
