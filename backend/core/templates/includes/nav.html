@@ -52,14 +52,26 @@
             <a class="nav-link text-white" href="{% url 'breed:breed_list' %}">Breed</a>
           </li>
         </ul>
+
+        
+        <div class="dropdown navbar=item navbar-light">
+          <button class="btn bg-info dropdown-toggle text-white btn-lg" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                {{ user.username }}
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" href="{% url 'users:user_update' user.id %}">Edit Profile</a></li>
+            <li><a class="dropdown-item" href="#">Reset password</a></li>
+          </ul>
+        </div>
         <ul class="navbar-nav">
-          <form action="{% url 'logout' %}" method="post">
-            {% csrf_token %}
-            <button type="submit" class="border b-0 rounded text-white bg-info">Log Out</button>
-          </form>
+            <form action="{% url 'logout' %}" method="post">
+              {% csrf_token %}
+              <button type="submit" class="border b-0 rounded text-white bg-info">Log Out</button>
+            </form>
         </ul>
+
         {% else %}
-        <ul class="navbar-nav me-4">
+        <ul class="navbar-nav me-1">
           <li class="nav-item">
             <a class="nav-link text-white" href="accounts/login/">Login</a>
           </li>

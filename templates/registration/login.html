@@ -25,6 +25,9 @@
                         <br>
 
                         {{ form.errors.name }}
+                        <div class="flex items-start">
+                            <a href="{% url 'password_reset' %}" class="text-sm text-teal-500 hover:underline ml-auto">Esqueceu a senha?</a>
+                        </div>
                         <button class="btn btn-info btn-block" style="width:100%" type="submit">Login</button>
                         <br>
                         <p class="change-form-p">Do you want to create an account? <a href="/accounts/register/">Click here!</a></p>

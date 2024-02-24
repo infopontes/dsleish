@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load widget_tweaks %}
+
+{% block content %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="container w-50 p-3 border rounded">
+        <h5>User Registration</h5>
+        <div>
+            <form
+                action="."
+                method="POST"
+                enctype="multipart/form-data"
+            >
+            {% csrf_token %}
+                {% comment %} {{ form }} {% endcomment %}
+
+                <label for="">{{ form.username.label }}</label>
+                {% render_field form.username class="form-control" %}
+                <br>
+
+                <label for="">{{ form.first_name.label }}</label>
+                {% render_field form.first_name class="form-control" %}
+                <br>
+
+                <label for="">{{ form.last_name.label }}</label>
+                {% render_field form.last_name class="form-control" %}
+                <br>
+
+                <label for="">{{ form.email.label }}</label>
+                {% render_field form.email class="form-control" %}
+                <br>
+
+                {{ form.errors.name }}
+                
+                <button class="btn btn-primary mt-2" type="submit">Save</button>
+            </form>
+        </div>
+    </div>
+{% endblock content %}

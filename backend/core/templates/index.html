@@ -7,6 +7,14 @@
     <br>
     <h3>DSLeish - Data science for leishmaniasis data management.</h3>
     <br>
+    {% if messages %}
+      {% for message in messages %}
+          <div class="text-center alert alert-{{ message.tags }}">
+              {{ message|safe }}
+          </div>
+      {% endfor %}
+    {% endif %}
+
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Leishmaniasis_life_cycle_diagram_en.svg/918px-Leishmaniasis_life_cycle_diagram_en.svg.png">
   </div>
 {% endblock content %}
