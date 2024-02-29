@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load widget_tweaks %}
+
+{% block content %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="container w-50 p-3 border rounded">
+        <h5>Specie Registration</h5>
+        <div>
+            <form
+                action="."
+                method="POST"
+                enctype="multipart/form-data"
+            >
+            {% csrf_token %}
+                {% comment %} {{ form }} {% endcomment %}
+
+                <label for="">{{ form.name.label }}</label>
+                {% render_field form.name class="form-control" %}
+
+                <label for="" class="pt-2">{{ form.description.label }}</label>
+                {% render_field form.description class="form-control" %}
+
+
+                {{ form.errors.name }}
+                
+                <button class="btn btn-primary mt-2" type="submit">Save</button>
+            </form>
+        </div>
+    </div>
+{% endblock content %}

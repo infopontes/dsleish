@@ -1,82 +1,80 @@
-<nav class="navbar navbar-expand-md navbar-light bg-info fixed-top fs-5">
-    <!-- <a class="navbar-brand" href="{% url 'core:index' %}">
-      HOME
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/DNA_icon.svg/70px-DNA_icon.svg.png" class="img-fluid w-10 p-0">
-    </a> -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-lg navbar-light fixed-top fs-5" style="background: rgb(2, 201, 201)">
+  <div class="container-fluid">
+    <!-- logo -->
+    <a class="navbar-brand" href="{% url 'core:index' %}">
+      <img src="https://ufpi.br/images/ufpi-icone1.png" alt="UFPI" height="50">
+    </a>
+
+    <!-- menu sanduiche -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-principal" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active ps-4">
-          <a class="nav-link text-white me-4" href="{% url 'core:index' %}"><strong>DS</strong>Leish</span></a>
-        </li>
 
-        {% if user.is_authenticated %}
-
+    <!-- menu principal -->
+    <div class="collapse navbar-collapse" id="menu-principal">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link text-white" href="" target="_blank">UFPI</a>
+          <a class="nav-link active text-white" aria-current="page" href="#">DSLeish</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="" target="_blank">PPGTAIR</a>
+          <a class="nav-link text-white" href="https://ufpi.br/" target="_blank">UFPI</a>
         </li>
-        <!-- <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <strong>API V1</strong>
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="/api/v1/documentos/">Documents</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="/swagger/">Documents API</a>
-          </div>
-        </li> -->
-
-        {% endif %}
-
         <li class="nav-item">
           <a class="nav-link text-white" href="">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="{ url 'core:sobre' %}">Help</a>
+          <a class="nav-link text-white" href="">Help</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="{ url 'core:contatos' %}">Contacts</a>
+          <a class="nav-link text-white" href="">Contacts</a>
         </li>
-  
+
+        <!-- área autenticada -->
+      {% if user.is_authenticated %}
+
+      <!-- menu de cadastros  -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Registrations
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="{% url 'breed:breed_list' %}">Breed</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="{% url 'specie:specie_list' %}">Specie</a></li>
+          </ul>
+        </li>
+
+        <!-- menu de perfil -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Perfil
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">User: {{ user.username }}</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="{% url 'users:user_update' user.id %}">Edit Profile</a></li>
+            <li><a class="dropdown-item" href="{% url 'users:password' %}">Changed password</a></li>
+          </ul>
+        </li>
+
       </ul>
 
-      <div class="collapse navbar-collapse justify-content-end me-4">
-        {% if user.is_authenticated %}
-        <ul class="navbar-nav me-4">
-          <li class="nav-item">
-            <a class="nav-link text-white" href="{% url 'breed:breed_list' %}">Breed</a>
-          </li>
-        </ul>
+      <!-- sair do sistema -->
+      <form class="d-flex" action="{% url 'logout' %}" method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-outline-dark">Log Out</button>
+      </form>
+      
+      {% endif %}
 
-        
-        <div class="dropdown navbar=item navbar-light">
-          <button class="btn bg-info dropdown-toggle text-white btn-lg" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                {{ user.username }}
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            <li><a class="dropdown-item" href="{% url 'users:user_update' user.id %}">Edit Profile</a></li>
-            <li><a class="dropdown-item" href="#">Reset password</a></li>
-          </ul>
-        </div>
-        <ul class="navbar-nav">
-            <form action="{% url 'logout' %}" method="post">
-              {% csrf_token %}
-              <button type="submit" class="border b-0 rounded text-white bg-info">Log Out</button>
-            </form>
-        </ul>
-
-        {% else %}
+    </div>
+      <!-- login -->
+      {% if not user.is_authenticated %}
         <ul class="navbar-nav me-1">
           <li class="nav-item">
             <a class="nav-link text-white" href="accounts/login/">Login</a>
           </li>
-        </ul> 
-      </div>
+        </ul>
       {% endif %}
-    </div>
-  </nav>
+  </div>
+</nav>

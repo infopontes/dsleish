@@ -26,12 +26,11 @@ class UserUpdateView(SuccessMessageMixin, UpdateView):
     form_class = UserChangeForm
     success_url = reverse_lazy('core:index')
     success_message = 'User changed successfully!!!'
-    
+
 # https://youtu.be/P6QHswl2PqE
-class PasswordsChangeView(PasswordChangeView):
+class PasswordsChangeView(SuccessMessageMixin, PasswordChangeView):
     model = User
     form_class = PasswordChangingForm
-    success_url = reverse_lazy('users:password_success')
-
-def password_success(request):
-    return render(request, 'users/password_success.html', {})
+    #success_url = reverse_lazy('users:password_success')
+    success_url = reverse_lazy('core:index')
+    success_message = 'User password changed successfully!!!'

@@ -6,3 +6,12 @@ Curso de Django 2 #16: Registro de Usuários
 https://youtu.be/o19Eki_7UqY
 
 
+
+# Logs
+MONITORANDO aplicações PYTHON | Trabalhando com LOGS
+https://youtu.be/ZEoc1aSovfw
+
+# Comandos 
+python ../manage.py graph_models --pygraphviz -a -g -o meu_diagrama.png fa-comment-alt-dots    "></i>
+
+

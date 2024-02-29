@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'backend.breed',
     'backend.users',
     'backend.accounts',
-    
+    'backend.specie',
 ]
 
 MIDDLEWARE = [
@@ -103,6 +103,11 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# https://ohmycode.com.br/gerando-o-diagrama-de-classes-do-seu-projeto-django/
+GRAPH_MODELS = {
+  'all_applications': True,
+  'group_models': True,
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/

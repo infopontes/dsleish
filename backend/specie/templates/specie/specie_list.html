@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="container w-50 p-3 border rounded">
+    <h1>List of species</h1>
+    <br>
+    <a
+      href="{% url 'specie:specie_create' %}"
+      class="btn btn-primary"
+    >Add</a>
+    <br>
+
+    <table class="table border mt-1">
+      <thead>
+        <tr>
+          <th scope="col" class="col-6">Name</th>
+          <th scope="col" class="col-1">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for object in object_list %}
+        <tr>
+          <td>
+              {% comment %} <a href="{% url 'specie:specie_detail' object.pk %}">{{ object }}</a>  {% endcomment %}
+              <a href="{{ object.get_absolute_url }}">{{ object }}</a>
+          </td>
+          <td>
+            <!-- update -->
+            <a
+              href="{% url 'specie:specie_update' object.pk %}"
+              class="mr-5"
+            >
+              <span>
+                <i class="fas fa-pen"></i>
+              </span>
+            </a>
+     
+            <!-- delete -->
+            <a href="{% url 'specie:specie_delete' object.pk %}" class="ml-5">
+              <span>
+                <i class="fa fa-trash text-danger p-1"></i>
+              </span>
+            </a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+  </table>
+</div>
+        
+    
+{% endblock content %}

@@ -1,0 +1,14 @@
+nano .bash_aliases
+
+alias venv="source .venv/bin/activate"
+alias djnewproj="django-admin startproject ."
+alias djnewapp="python ../manage.py startapp"
+alias djmake="python ../manage.py makemigrations"
+alias djmigrate="python ../manage.py migrate"
+
+alias djrun="python ../manage.py runserver"
+
+alias djcleardb="python ../manage.py flush"
+alias djdbshell="python manage.py dbshell"
+alias djmanage="python ../manage.py"
+alias djsuper="python ../manage.py createsuperuser"
