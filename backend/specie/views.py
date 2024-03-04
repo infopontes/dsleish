@@ -36,8 +36,6 @@ class SpecieUpdateView(LoginRequiredMixin, UpdateView):
     form_class = SpecieForm
     # success_url = reverse_lazy('race:race_list')
     
-
-def specie_delete(LoginRequiredMixin, request, pk):
-    instance = Specie.objects.get(pk=pk)
-    instance.delete()
-    return redirect('specie:specie_list')
+class SpecieDeleteView(DeleteView):
+    model = Specie
+    success_url = reverse_lazy("specie:specie_list")

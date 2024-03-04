@@ -9,5 +9,5 @@ urlpatterns = [
     path('create/', v.BreedCreateView.as_view(), name='breed_create'),
     path('<uuid:pk>/', v.BreedDetailView.as_view(), name='breed_detail'),
     path('<uuid:pk>/update/', v.BreedUpdateView.as_view(), name='breed_update'),
-    path('<uuid:pk>/delete/', v.breed_delete, name='breed_delete'),
+    path('<uuid:pk>/delete/', v.BreedDeleteView.as_view(), name='breed_delete'),
 ]

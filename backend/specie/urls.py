@@ -9,5 +9,5 @@ urlpatterns = [
     path('create/', v.SpecieCreateView.as_view(), name='specie_create'),
     path('<uuid:pk>/', v.SpecieDetailView.as_view(), name='specie_detail'),
     path('<uuid:pk>/update/', v.SpecieUpdateView.as_view(), name='specie_update'),
-    path('<uuid:pk>/delete/', v.specie_delete, name='specie_delete'),
+    path('<uuid:pk>/delete/', v.SpecieDeleteView.as_view(), name='specie_delete'),
 ]

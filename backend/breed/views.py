@@ -37,7 +37,6 @@ class BreedUpdateView(LoginRequiredMixin, UpdateView):
     # success_url = reverse_lazy('race:race_list')
     
 
-def breed_delete(LoginRequiredMixin, request, pk):
-    instance = Breed.objects.get(pk=pk)
-    instance.delete()
-    return redirect('breed:breed_list')
+class BreedDeleteView(DeleteView):
+    model = Breed
+    success_url = reverse_lazy("breed:breed_list")
