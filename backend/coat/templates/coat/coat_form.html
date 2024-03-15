@@ -10,7 +10,7 @@
     <br>
 
     <div class="container w-50 p-3 border rounded">
-        <h5>Specie Registration</h5>
+        <h5>Coat Registration</h5>
         <div>
             <form
                 action="."
@@ -21,9 +21,9 @@
                 {% comment %} {{ form }} {% endcomment %}
 
                 <label for="">{{ form.name.label }}</label>
-                {% render_field form.name class="form-control" hx-get="/specie/check_specie/" hx-trigger="keyup" hx-target="#specie-out" %}
-                <div id="specie-out"></div>
-
+                {% render_field form.name class="form-control" hx-get="/coat/check_coat/" hx-trigger="keyup" hx-target="#coat-out" %}
+                <div id="coat-out"></div>
+                
                 <label for="" class="pt-2">{{ form.description.label }}</label>
                 {% render_field form.description class="form-control" %}
 

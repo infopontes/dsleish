@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'backend.users',
     'backend.accounts',
     'backend.specie',
+    'backend.coat',
 ]
 
 MIDDLEWARE = [

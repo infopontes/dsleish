@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="container w-50 p-3 border rounded">
+    
+    <h5>Coat Detail</h5>
+    
+    <br>
+
+    <div class="container border p-2"> 
+        <p><strong>Name:</strong>  {{ object.name }} </p>
+        <p><strong>Description:</strong> {{ object.description }} </p>
+    </div>
+    <br>
+
+    <a
+    href="{% url 'coat:coat_list' %}"
+    class="btn btn-primary"
+    >Back</a>
+</div>
+
+{% endblock content %}

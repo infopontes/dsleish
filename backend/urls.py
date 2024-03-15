@@ -8,6 +8,7 @@ urlpatterns = [
     path('', include('backend.core.urls', namespace='core')),
     path('breed/', include('backend.breed.urls', namespace='breed')),
     path('specie/', include('backend.specie.urls', namespace='specie')),
+    path('coat/', include('backend.coat.urls', namespace='coat')),
     path('users/', include('backend.users.urls', namespace='user')),
     path('accounts/', include('backend.accounts.urls', namespace='accounts')),
     path('accounts/', include('django.contrib.auth.urls')),

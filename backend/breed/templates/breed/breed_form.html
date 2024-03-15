@@ -21,7 +21,8 @@
                 {% comment %} {{ form }} {% endcomment %}
 
                 <label for="">{{ form.name.label }}</label>
-                {% render_field form.name class="form-control" %}
+                {% render_field form.name class="form-control" hx-get="/breed/check_breed/" hx-trigger="keyup" hx-target="#breed-out" %}
+                <div id="breed-out"></div>
 
                 <label for="" class="pt-2">{{ form.description.label }}</label>
                 {% render_field form.description class="form-control" %}
