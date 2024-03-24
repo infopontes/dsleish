@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load widget_tweaks %}
+
+{% block content %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="container p-3 border rounded">
+        <h5>Animal Registration</h5>
+        <div>
+            <form
+                action="."
+                method="POST"
+                enctype="multipart/form-data"
+            >
+            {% csrf_token %}
+                {% comment %} {{ form }} {% endcomment %}
+
+                <label for="">{{ form.name.label }}</label>
+                {% render_field form.name class="form-control" hx-get="/animal/check_animal/" hx-trigger="keyup" hx-target="#animal-out" %}
+                <div id="animal-out"></div>
+
+                <label for="" class="pt-2">{{ form.id_db_original.label }}</label>
+                {% render_field form.id_db_original class="form-control" %}
+
+                <label for="" class="pt-2">{{ form.name_chip.label }}</label>
+                {% render_field form.name_chip class="form-control" %}
+
+                <label for="" class="pt-2">{{ form.breed.label }}</label>
+                {% render_field form.breed class="form-control" %}
+
+                <label for="" class="pt-2">{{ form.coat.label }}</label>
+                {% render_field form.coat class="form-control" %}
+
+                <label for="" class="pt-2">{{ form.sex.label }}</label>
+                {% render_field form.sex class="form-control" %}
+
+                {{ form.errors.name }}
+                
+                <button class="btn btn-primary mt-2" type="submit">Save</button>
+            </form>
+        </div>
+    </div>
+{% endblock content %}

@@ -12,3 +12,8 @@ alias djcleardb="python ../manage.py flush"
 alias djdbshell="python manage.py dbshell"
 alias djmanage="python ../manage.py"
 alias djsuper="python ../manage.py createsuperuser"
+
+#fly
+https://fly.io/docs/django/getting-started/existing/
+/home/pontes/.fly/bin/flyctl deploy
+

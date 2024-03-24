@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="container p-3 border rounded">
+    
+    <h5>Animal Detail</h5>
+    <br>
+
+    <div class="container border p-2"> 
+        <p><strong>Name:</strong>  {{ object.name }} </p>
+        <p><strong>ID DB Origin:</strong>  {{ object.id_db_original }} </p>
+        <p><strong>Name Chip:</strong> {{ object.name_chip }} </p>
+        <p><strong>Breed:</strong> {{ object.breed }} </p>
+        <p><strong>Coat:</strong> {{ object.coat }} </p>
+        <p><strong>sex:</strong> {{ object.sex }} </p>
+    </div>
+    <br>
+
+    <a
+    href="{% url 'animal:animal_list' %}"
+    class="btn btn-primary"
+    >Back</a>
+</div>
+
+{% endblock content %}

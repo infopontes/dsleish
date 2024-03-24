@@ -6,4 +6,8 @@ class BreedForm(forms.ModelForm):
     
     class Meta:
         model = Breed
-        fields = ('name', 'description',)
+        fields = ('name', 'description', 'specie')
+        
+        widgets = {
+            "specie": forms.Select()
+        }
