@@ -17,3 +17,12 @@ alias djsuper="python ../manage.py createsuperuser"
 https://fly.io/docs/django/getting-started/existing/
 /home/pontes/.fly/bin/flyctl deploy
 
+/home/pontes/.fly/bin/flyctl status
+
+/home/pontes/.fly/bin/flyctl machine start id
+
+/home/pontes/.fly/bin/fly ssh console -C "python manage.py makemigrations"
+
+
+/home/pontes/.fly/bin/fly ssh console -C "python manage.py migrate"
+
