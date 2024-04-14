@@ -24,6 +24,12 @@
                 {% render_field form.name class="form-control" hx-get="/animal/check_animal/" hx-trigger="keyup" hx-target="#animal-out" %}
                 <div id="animal-out"></div>
 
+                <label for="" class=" form-label pt-2">{{ form.owner.label }}</label>
+                {% render_field form.owner class="form-control" %}
+
+                <label for="" class=" form-label pt-2">{{ form.phone_number.label }}</label>
+                {% render_field form.phone_number|add_class:"phone-mask" class="form-control" %}
+
                 <label for="" class=" form-label pt-2">{{ form.id_db_original.label }}</label>
                 {% render_field form.id_db_original class="form-control" %}
 
@@ -38,6 +44,9 @@
 
                 <label for="" class="form-label pt-2">{{ form.sex.label }}</label>
                 {% render_field form.sex class="form-control" %}
+
+                <label for="" class=" form-label pt-2">{{ form.caracteristics.label }}</label>
+                {% render_field form.caracteristics class="form-control" %}
 
                 {{ form.errors.name }}
                 

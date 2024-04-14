@@ -2,8 +2,8 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
-{% load fontawesome_5 %}
+<!-- 
+{% load fontawesome_5 %} -->
 
 <head>
   <meta charset="utf-8">
@@ -23,7 +23,7 @@
   <!-- Font-awesome -->
   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 
-  <!-- <link rel="stylesheet" href="{% static 'css/style.css' %}"> -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
   <!-- HTMX -->
   <!-- <script src="https://unpkg.com/htmx.org@1.8.2"></script> -->
@@ -43,6 +43,7 @@
   <!-- <script src="https://cdn.jsdelivr.net/npm/mustache@4.2.0/mustache.min.js"></script> -->
 
 
+
 </head>
 
 <!-- <body hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'> -->
@@ -53,11 +54,20 @@
   </div>
 
   <!-- jQuery -->
-  <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> -->
+  <script src="{% static 'js/jquery-3.7.1.min.js' %}"></script>
+
+  <!-- jQuery Mask Plugin -->
+  <script src="{% static 'js/jquery.mask.min.js' %}"></script>
   <!-- Bootstrap core JS -->
   <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script> -->
   <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> -->
   <!-- <script src="https://unpkg.com/htmx.org@1.6.1"></script> -->
+
+  <script>
+    $(document).ready(function() {
+        $('.phone-mask').mask('(00) 00000-0000');
+    });
+</script>
 
 </body>
 
