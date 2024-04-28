@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="container p-3 border rounded">
+    <h5>List of Research Group</h5>
+    <hr>
+    <table class="table mt-1">
+      <thead>
+        <tr>
+          <th style="width: 98%; color: rgb(2, 201, 201);">Name</th>
+          <th colspan="2">    <a
+            href="{% url 'gsearch:gsearch_create' %}"
+            style="color: rgb(2, 201, 201);"
+          >
+            <span>
+              <i class="fa fa-plus">Add</i>
+            </span></a>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for object in object_list %}
+        <tr>
+          <td>
+              {% comment %} <a href="{% url 'gsearch:gsearch_detail' object.pk %}">{{ object }}</a>  {% endcomment %}
+              <a href="{{ object.get_absolute_url }}">{{ object }}</a>
+          </td>
+          <td class="mr-0">
+            <!-- update -->
+            <a
+              href="{% url 'gsearch:gsearch_update' object.pk %}"
+            >
+              <span>
+                <i class="fa fa-edit"></i>
+              </span>
+            </a>
+            </td>
+            <td class="ml-0">
+            <!-- delete -->
+            <a href="{% url 'gsearch:gsearch_delete' object.pk %}" class="ml-5">
+              <span>
+                <i class="fa fa-trash text-danger"></i>
+              </span>
+            </a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+  </table>
+</div>
+        
+    
+{% endblock content %}

@@ -41,4 +41,3 @@ class Animal(TimeStampedModel):
     def get_absolute_url(self):
         return reverse_lazy('animal:animal_detail', kwargs={'pk': self.pk})
     
-    

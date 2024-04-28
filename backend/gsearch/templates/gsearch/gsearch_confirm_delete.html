@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="container p-3 border rounded">
+    
+    <h5>Research Group Delete</h5>
+    <hr>
+    <div> 
+        <form method="post">{% csrf_token %}
+            <p>Are you sure you want to delete <strong>"{{ object }}"</strong>?</p>
+            {{ form }}
+            <input class="btn btn-danger" type="submit" value="Confirm">
+            <a
+            href="{% url 'gsearch:gsearch_list' %}"
+            class="btn btn-primary"
+            >Back</a>
+        </form>        
+    </div>
+    <br>
+
+</div>
+
+{% endblock content %}

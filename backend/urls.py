@@ -10,6 +10,8 @@ urlpatterns = [
     path('specie/', include('backend.specie.urls', namespace='specie')),
     path('coat/', include('backend.coat.urls', namespace='coat')),
     path('animal/', include('backend.animal.urls', namespace='animal')),
+    path('project/', include('backend.project.urls', namespace='project')),
+    path('gsearch/', include('backend.gsearch.urls', namespace='gsearch')),
     path('users/', include('backend.users.urls', namespace='user')),
     path('accounts/', include('backend.accounts.urls', namespace='accounts')),
     path('accounts/', include('django.contrib.auth.urls')),

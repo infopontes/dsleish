@@ -14,7 +14,7 @@
     <div class="collapse navbar-collapse" id="menu-principal">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active text-white" aria-current="page" href="#">DSLeish</a>
+          <a class="nav-link active text-white" aria-current="page" href="/">DSLeish</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-white" href="https://ufpi.br/" target="_blank">UFPI</a>
@@ -41,6 +41,8 @@
             <li><a class="dropdown-item" href="{% url 'animal:animal_list' %}">Animal</a></li>
             <li><a class="dropdown-item" href="{% url 'breed:breed_list' %}">Breed</a></li>
             <li><a class="dropdown-item" href="{% url 'coat:coat_list' %}">Coat</a></li>
+            <li><a class="dropdown-item" href="{% url 'project:project_list' %}">Project</a></li>
+            <li><a class="dropdown-item" href="{% url 'gsearch:gsearch_list' %}">Research Groups</a></li>
             <li><a class="dropdown-item" href="{% url 'specie:specie_list' %}">Specie</a></li>
           </ul>
         </li>

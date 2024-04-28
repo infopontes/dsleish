@@ -38,13 +38,15 @@ INSTALLED_APPS = [
     'bootstrap5',
     'fontawesome_5',
     # my apps
-    'backend.core',
-    'backend.breed',
-    'backend.users',
     'backend.accounts',
-    'backend.specie',
-    'backend.coat',
     'backend.animal',
+    'backend.breed',
+    'backend.coat',
+    'backend.core',
+    'backend.gsearch',
+    'backend.project',
+    'backend.specie',
+    'backend.users',
 ]
 
 MIDDLEWARE = [
