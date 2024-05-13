@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'widget_tweaks',
     'bootstrap5',
     'fontawesome_5',
+    'rolepermissions',
     # my apps
     'backend.accounts',
     'backend.animal',
@@ -134,15 +135,20 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-#STATIC_URL = 'static/'
+STATIC_URL = 'static/'
 
-#STATIC_ROOT = BASE_DIR.joinpath('staticfiles')
+STATIC_ROOT = BASE_DIR.joinpath('staticfiles')
 
-STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
-]
+# deu erro no deploy do fly
+# STATIC_URL = '/static/'
+
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'static')
+# ]
+
+
+
 
 # STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 
@@ -159,4 +165,10 @@ AUTH_USER_MODEL = "users.User"
 LOGIN_REDIRECT_URL = '/'
 
 LOGOUT_REDIRECT_URL = '/accounts/login/'
+
+ROLEPERMISSIONS_MODULE = 'backend.roles'
+
+ROLEPERMISSIONS_REDIRECT_TO_LOGIN = True
+
+#ROLEPERMISSIONS_REGISTER_ADMIN = True
 
