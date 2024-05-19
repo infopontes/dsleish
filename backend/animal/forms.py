@@ -6,7 +6,7 @@ class AnimalForm(forms.ModelForm):
     
     class Meta:
         model = Animal
-        fields = ('name', 'owner', 'phone_number', 'id_db_original', 'name_chip', 'breed', 'coat', 'sex', 'caracteristics')
+        fields = ('name', 'owner', 'phone_number', 'id_db_original', 'name_chip', 'breed', 'age', 'coat', 'sex', 'caracteristics')
         
         widgets = {
             "breed": forms.Select(),

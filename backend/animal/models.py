@@ -18,19 +18,20 @@ class Animal(TimeStampedModel):
     )
     
     id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
-    name = models.CharField(max_length=50)
-    owner = models.CharField(max_length=50)
-    phone_number = models.CharField(max_length=15)
-    id_db_original = models.CharField(max_length=5)
-    name_chip = models.CharField(max_length=15)
-    breed = models.ForeignKey(Breed, on_delete=models.CASCADE)
-    coat = models.ForeignKey(Coat, on_delete=models.CASCADE)
-    sex = models.CharField(max_length=1, choices=SEXO_CHOICES)
-    caracteristics = models.CharField(max_length=300)
+    id_db_original = models.CharField(max_length=5, blank=True)
+    name = models.CharField(max_length=50, blank=True)
+    name_chip = models.CharField(max_length=15, blank=True)
+    sex = models.CharField(max_length=1, choices=SEXO_CHOICES, null=True, blank=True)
+    breed = models.ForeignKey(Breed, on_delete=models.CASCADE, null=True, blank=True)
+    age = models.CharField(max_length=5, blank=True)
+    coat = models.ForeignKey(Coat, on_delete=models.CASCADE, null=True, blank=True)
+    owner = models.CharField(max_length=50, blank=True)
+    phone_number = models.CharField(max_length=15, blank=True)
+    caracteristics = models.CharField(max_length=300, blank=True)
     
     
     class Meta:
-        ordering = ('-name',)
+        ordering = ('name',)
         verbose_name = 'Animal'
         verbose_name_plural = 'Animals'
     

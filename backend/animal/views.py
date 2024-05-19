@@ -20,7 +20,7 @@ from .forms import AnimalForm
 class AnimalListView(HasRoleMixin, LoginRequiredMixin, ListView):
     allowed_roles = ['researcher', 'student']
     model = Animal
-    paginate_by = 30
+    paginate_by = 10
 
 
 class AnimalDetailView(HasRoleMixin, LoginRequiredMixin, DetailView):
