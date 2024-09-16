@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="container p-3 border rounded">
+    
+    <h5>Collect Detail</h5>
+    <br>
+
+    <div class="container border p-2"> 
+        <p><strong>Data Collection:</strong>  {{ object.dt_collection }} </p>
+        <p><strong>Search Group:</strong>  {{ object.id_search_group }} </p>
+        <p><strong>Animal:</strong>  {{ object.id_animal }} </p>
+        <p><strong>Latitude:</strong>  {{ object.latitude }} </p>
+        <p><strong>Longitude:</strong> {{ object.longitude }} </p>
+        <p><strong>Score:</strong> {{ object.score }} </p>
+        <p><strong>Serum:</strong> {{ object.serum }} </p>
+        <p><strong>Plasma:</strong> {{ object.plasma }} </p>
+        <p><strong>Marrow Aspirate:</strong> {{ object.marrow_aspirate }} </p>
+        <p><strong>Lymph Node Aspirate:</strong> {{ object.lymph_node_aspirate }} </p>
+        <p><strong>Lymph Node Aspirate DNA:</strong> {{ object.lymph_node_aspirate_dna }} </p>
+        <p><strong>Strains:</strong> {{ object.strains }} </p>
+        <p><strong>DNA Strains:</strong> {{ object.dna_strains }} </p>
+        <p><strong>Parasite Slide:</strong> {{ object.parasite_slide }} </p>
+        <p><strong>Location Slide:</strong> {{ object.location_slide }} </p>
+        <p><strong>Parasite Culture:</strong> {{ object.parasite_culture }} </p>
+        <p><strong>Location Culture:</strong> {{ object.location_culture }} </p>
+        <p><strong>Sorology Rifi:</strong> {{ object.sorology_rifi }} </p>
+        <p><strong>Dilution:</strong> {{ object.dilution }} </p>
+        <p><strong>Sorology DPP:</strong> {{ object.sorology_dpp }} </p>
+        <p><strong>Fiocruz Elisa:</strong> {{ object.fiocruz_elisa }} </p>
+        <p><strong>Biomanguinhos Elisa:</strong> {{ object.biomanguinhos_elisa }} </p>
+        <p><strong>General State:</strong> {{ object.general_state }} </p>
+        <p><strong>Ecto Paras:</strong> {{ object.ecto_paras }} </p>
+        <p><strong>Nutritional Status:</strong> {{ object.nutritional_status }} </p>
+        <p><strong>Observation:</strong> {{ object.observation }} </p>
+        <p><strong>Nails:</strong> {{ object.nails }} </p>
+        <p><strong>Mucous Coloring:</strong> {{ object.mucous_coloring }} </p>
+        <p><strong>Muzzle Injury:</strong> {{ object.muzzle_injury }} </p>
+        <p><strong>Observation Muzzle Injury:</strong> {{ object.observation_muzzle_injury }} </p>
+        <p><strong>Ear Injury:</strong> {{ object.ear_injury }} </p>
+        <p><strong>Observation Ear Injury:</strong> {{ object.observation_ear_injury }} </p>
+        <p><strong>Lymph Node:</strong> {{ object.lymph_node }} </p>
+        <p><strong>Observation Lymph Node:</strong> {{ object.observation_lymph_node }} </p>
+        <p><strong>Blepharitis:</strong> {{ object.blepharitis }} </p>
+        <p><strong>Conjunctivitis:</strong> {{ object.conjunctivitis }} </p>
+        <p><strong>Observation Conjuntivitis:</strong> {{ object.observation_conjuntivitis }} </p>
+        <p><strong>Bleeding:</strong> {{ object.bleeding }} </p>
+        <p><strong>Skin Injury:</strong> {{ object.skin_injury }} </p>
+        <p><strong>Observation Skin Injury:</strong> {{ object.observation_skin_injury }} </p>
+        <p><strong>Muzzle Depigmentation:</strong> {{ object.muzzle_depigmentation }} </p>
+        <p><strong>Lip Depigmentation:</strong> {{ object.lip_depigmentation }} </p>
+    </div>
+    <br>
+
+    <a
+    href="{% url 'collect:collect_list' %}"
+    class="btn btn-primary"
+    >Back</a>
+</div>
+
+{% endblock content %}

@@ -10,14 +10,14 @@
 <br>
 
 <div class="container p-3 border rounded">
-    <h5>List of breeds</h5>
+    <h5>List of collect</h5>
     <hr>
     <table class="table mt-1">
       <thead>
         <tr>
           <th style="width: 98%; color: rgb(2, 201, 201);">Name</th>
           <th colspan="2">    <a
-            href="{% url 'breed:breed_create' %}"
+            href="{% url 'collect:collect_create' %}"
             style="color: rgb(2, 201, 201);"
           >
             <span>
@@ -30,13 +30,13 @@
         {% for object in object_list %}
         <tr>
           <td>
-              {% comment %} <a href="{% url 'breed:breed_detail' object.pk %}">{{ object }}</a>  {% endcomment %}
+              {% comment %} <a href="{% url 'collect:collect_detail' object.pk %}">{{ object }}</a>  {% endcomment %}
               <a href="{{ object.get_absolute_url }}">{{ object }}</a>
           </td>
           <td class="mr-0">
             <!-- update -->
             <a
-              href="{% url 'breed:breed_update' object.pk %}"
+              href="{% url 'collect:collect_update' object.pk %}"
             >
               <span>
                 <i class="fa fa-edit"></i>
@@ -45,7 +45,7 @@
             </td>
             <td class="ml-0">
             <!-- delete -->
-            <a href="{% url 'breed:breed_delete' object.pk %}" class="ml-5">
+            <a href="{% url 'collect:collect_delete' object.pk %}" class="ml-5">
               <span>
                 <i class="fa fa-trash text-danger"></i>
               </span>
@@ -71,7 +71,7 @@
             <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
         {% endif %}
     </span>
-  </div>
+</div>
 </div>
         
     

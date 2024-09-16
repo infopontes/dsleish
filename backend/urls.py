@@ -9,6 +9,7 @@ urlpatterns = [
     path('breed/', include('backend.breed.urls', namespace='breed')),
     path('specie/', include('backend.specie.urls', namespace='specie')),
     path('coat/', include('backend.coat.urls', namespace='coat')),
+    path('collect/', include('backend.collect.urls', namespace='collect')),
     path('animal/', include('backend.animal.urls', namespace='animal')),
     path('project/', include('backend.project.urls', namespace='project')),
     path('gsearch/', include('backend.gsearch.urls', namespace='gsearch')),

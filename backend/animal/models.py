@@ -36,7 +36,7 @@ class Animal(TimeStampedModel):
         verbose_name_plural = 'Animals'
     
     def __str__(self):
-        return self.name
+        return self.name + '- ID DB: ' + self.id_db_original
     
     
     def get_absolute_url(self):

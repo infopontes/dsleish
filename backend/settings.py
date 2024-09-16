@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'backend.animal',
     'backend.breed',
     'backend.coat',
+    'backend.collect',
     'backend.core',
     'backend.gsearch',
     'backend.project',

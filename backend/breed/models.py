@@ -15,7 +15,7 @@ class Breed(TimeStampedModel):
     specie = models.ForeignKey(Specie, on_delete=models.CASCADE, default='59e10122aa4f4b718c3d1b06f907b26f')
     
     class Meta:
-        ordering = ('-name',)
+        ordering = ('name',)
         verbose_name = 'Breed'
         verbose_name_plural = 'Breeds'
     

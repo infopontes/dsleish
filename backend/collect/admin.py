@@ -1,14 +1,14 @@
 from django.contrib import admin
 
-from .models import Animal
+from .models import Collect
 
-@admin.register(Animal)
-class AnimalAdmin(admin.ModelAdmin):
-    list_display = ('__str__', 'breed')
+@admin.register(Collect)
+class CollectAdmin(admin.ModelAdmin):
+    list_display = ('__str__', 'id_animal')
     # readonly_fields = ('slug', 'created', 'modified')
     # list_display_links = ('name',)
-    search_fields = ('name',)
-    list_filter = ('breed',)
+    search_fields = ('dt_collection',)
+    list_filter = ('dt_collection',)
     # date_hierarchy = 'created'
     # ordering = ('-created',)
     # actions = ('',)

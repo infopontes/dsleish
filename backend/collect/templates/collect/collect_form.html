@@ -1,0 +1,166 @@
+{% extends "base.html" %}
+{% load widget_tweaks %}
+
+{% block content %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="container p-3 border rounded">
+        <h5>Collect Registration</h5>
+        <div>
+            <form
+                action="."
+                method="POST"
+                enctype="multipart/form-data"
+            >
+            {% csrf_token %}
+                {% comment %} {{ form }} {% endcomment %}
+
+                <button class="btn btn-primary mt-2" type="submit">Save</button>
+
+                <label for="" class=" form-label pt-2">{{ form.dt_collection.label }}</label>
+                {% render_field form.dt_collection class="form-control" %}
+
+                <label for="" class=" form-label pt-2">{{ form.id_search_group.label }}</label>
+                {% render_field form.id_search_group class="form-control" %}
+
+                <label for="" class=" form-label pt-2">{{ form.id_animal.label }}</label>
+                {% render_field form.id_animal class="form-control" %}
+
+                <label for="" class=" form-label pt-2">{{ form.animal.label }}</label>
+                {% render_field form.animal class="form-control" %}
+
+                <label for="" class=" form-label pt-2">{{ form.latitude.label }}</label>
+                {% render_field form.latitude class="form-control" %}
+
+                <label for="" class=" form-label pt-2">{{ form.longitude.label }}</label>
+                {% render_field form.longitude class="form-control" %}
+
+                <label for="" class=" form-label pt-2">{{ form.score.label }}</label>
+                {% render_field form.score class="form-control" %}
+
+                <label for="" class=" form-label pt-2">{{ form.serum.label }}</label>
+                {% render_field form.serum class="form-control" %}
+
+                <label for="" class=" form-label pt-2">{{ form.plasma.label }}</label>
+                {% render_field form.plasma class="form-control" %}
+
+                <label for="" class=" form-label pt-2">{{ form.marrow_aspirate.label }}</label>
+                {% render_field form.marrow_aspirate class="form-control" %}
+
+                <label for="" class=" form-label pt-2">{{ form.lymph_node_aspirate.label }}</label>
+                {% render_field form.lymph_node_aspirate class="form-control" %}
+
+                <label for="" class=" form-label pt-2">{{ form.lymph_node_aspirate_dna.label }}</label>
+                {% render_field form.lymph_node_aspirate_dna class="form-control" %}
+
+                <label for="" class=" form-label pt-2">{{ form.strains.label }}</label>
+                {% render_field form.strains class="form-control" %}
+
+                <label for="" class=" form-label pt-2">{{ form.dna_strains.label }}</label>
+                {% render_field form.dna_strains class="form-control" %}
+
+                <label for="" class=" form-label pt-2">{{ form.age.label }}</label>
+                {% render_field form.age class="form-control" %}
+
+                <label for="" class=" form-label pt-2">{{ form.parasite_slide.label }}</label>
+                {% render_field form.parasite_slide class="form-control" %}
+
+                <label for="" class=" form-label pt-2">{{ form.location_slide.label }}</label>
+                {% render_field form.location_slide class="form-control" %}
+
+                <label for="" class=" form-label pt-2">{{ form.parasite_culture.label }}</label>
+                {% render_field form.parasite_culture class="form-control" %}
+
+                <label for="" class=" form-label pt-2">{{ form.location_culture.label }}</label>
+                {% render_field form.location_culture class="form-control" %}
+
+                <label for="" class=" form-label pt-2">{{ form.sorology_rifi.label }}</label>
+                {% render_field form.sorology_rifi class="form-control" %}
+
+                <label for="" class=" form-label pt-2">{{ form.dilution.label }}</label>
+                {% render_field form.dilution class="form-control" %}
+
+                <label for="" class=" form-label pt-2">{{ form.sorology_dpp.label }}</label>
+                {% render_field form.sorology_dpp class="form-control" %}
+
+                <label for="" class=" form-label pt-2">{{ form.fiocruz_elisa.label }}</label>
+                {% render_field form.fiocruz_elisa class="form-control" %}
+
+                <label for="" class=" form-label pt-2">{{ form.biomanguinhos_elisa.label }}</label>
+                {% render_field form.biomanguinhos_elisa class="form-control" %}
+
+                <label for="" class=" form-label pt-2">{{ form.general_state.label }}</label>
+                {% render_field form.general_state class="form-control" %}
+
+                <label for="" class=" form-label pt-2">{{ form.ecto_paras.label }}</label>
+                {% render_field form.ecto_paras class="form-control" %}
+
+                <label for="" class=" form-label pt-2">{{ form.nutritional_status.label }}</label>
+                {% render_field form.nutritional_status class="form-control" %}
+
+                <label for="" class=" form-label pt-2">{{ form.observation.label }}</label>
+                {% render_field form.observation class="form-control" %}
+
+                <label for="" class=" form-label pt-2">{{ form.coat.label }}</label>
+                {% render_field form.coat class="form-control" %}
+
+                <label for="" class=" form-label pt-2">{{ form.nails.label }}</label>
+                {% render_field form.nails class="form-control" %}
+
+                <label for="" class=" form-label pt-2">{{ form.mucous_coloring.label }}</label>
+                {% render_field form.mucous_coloring class="form-control" %}
+
+                <label for="" class=" form-label pt-2">{{ form.muzzle_injury.label }}</label>
+                {% render_field form.muzzle_injury class="form-control" %}
+
+                <label for="" class=" form-label pt-2">{{ form.observation_muzzle_injury.label }}</label>
+                {% render_field form.observation_muzzle_injury class="form-control" %}
+
+                <label for="" class=" form-label pt-2">{{ form.ear_injury.label }}</label>
+                {% render_field form.ear_injury class="form-control" %}
+
+                <label for="" class=" form-label pt-2">{{ form.observation_ear_injury.label }}</label>
+                {% render_field form.observation_ear_injury class="form-control" %}
+
+                <label for="" class=" form-label pt-2">{{ form.lymph_node.label }}</label>
+                {% render_field form.lymph_node class="form-control" %}
+
+                <label for="" class=" form-label pt-2">{{ form.observation_lymph_node.label }}</label>
+                {% render_field form.observation_lymph_node class="form-control" %}
+
+                <label for="" class=" form-label pt-2">{{ form.blepharitis.label }}</label>
+                {% render_field form.blepharitis class="form-control" %}
+
+                <label for="" class=" form-label pt-2">{{ form.conjunctivitis.label }}</label>
+                {% render_field form.conjunctivitis class="form-control" %}
+
+                <label for="" class=" form-label pt-2">{{ form.observation_conjuntivitis.label }}</label>
+                {% render_field form.observation_conjuntivitis class="form-control" %}
+
+                <label for="" class=" form-label pt-2">{{ form.bleeding.label }}</label>
+                {% render_field form.bleeding class="form-control" %}
+
+                <label for="" class=" form-label pt-2">{{ form.skin_injury.label }}</label>
+                {% render_field form.skin_injury class="form-control" %}
+
+                <label for="" class=" form-label pt-2">{{ form.observation_skin_injury.label }}</label>
+                {% render_field form.observation_skin_injury class="form-control" %}
+
+                <label for="" class=" form-label pt-2">{{ form.muzzle_depigmentation.label }}</label>
+                {% render_field form.muzzle_depigmentation class="form-control" %}
+
+                <label for="" class=" form-label pt-2">{{ form.lip_depigmentation.label }}</label>
+                {% render_field form.lip_depigmentation class="form-control" %}
+
+                {{ form.errors.name }}
+                
+                <button class="btn btn-primary mt-2" type="submit">Save</button>
+            </form>
+        </div>
+    </div>
+{% endblock content %}

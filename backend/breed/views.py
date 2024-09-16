@@ -20,7 +20,7 @@ from .forms import BreedForm
 class BreedListView(HasRoleMixin, LoginRequiredMixin, ListView):
     allowed_roles = ['researcher', 'student']
     model = Breed
-    paginate_by = 30
+    paginate_by = 10
 
 
 class BreedDetailView(HasRoleMixin, LoginRequiredMixin, DetailView):
