@@ -3,6 +3,8 @@ from django.conf import settings
 from django.contrib import admin
 from django.urls import include, path
 
+from backend.api.api import api
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('backend.core.urls', namespace='core')),
@@ -16,6 +18,7 @@ urlpatterns = [
     path('users/', include('backend.users.urls', namespace='user')),
     path('accounts/', include('backend.accounts.urls', namespace='accounts')),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('api/', api.urls),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
