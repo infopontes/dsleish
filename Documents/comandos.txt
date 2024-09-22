@@ -20,6 +20,7 @@ https://youtu.be/xP6280zkIbo
 https://github.com/rg3915/estoque/blob/master/importando_produtos.py
 '''
 python ../manage.py shell_plus < importar_animal.py
+python ../manage.py shell_plus < importar_collect.py
 
 
 #fly

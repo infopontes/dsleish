@@ -130,6 +130,9 @@ dmypy.json
 
 .DS_Store
 
+# files to import database
+*.csv
+
 media/
 staticfiles/
 .idea
