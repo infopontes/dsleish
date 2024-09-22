@@ -1,27 +1,29 @@
+import uuid
 from ninja import Router
 from pydantic import BaseModel
 from typing import List, Optional
 from .models import Animal
 
-# Criando um roteador para organizar as rotas deste app
+# Creating a router to organize this app's routes
 router = Router()
 
-
 class BreedSchema(BaseModel):
-    name: Optional[str]  # Permite que o nome seja None
+    name: Optional[str]
 
     class Config:
         orm_mode = True
 
 
 class CoatSchema(BaseModel):
-    name: Optional[str]  # Permite que o nome seja None
-
+    name: Optional[str]
+    
     class Config:
         orm_mode = True
+        
 
-
+# Creating a router Animal
 class AnimalSchema(BaseModel):
+    id: Optional[uuid.UUID] = uuid.uuid4()
     id_db_original: Optional[str]
     name: Optional[str]
     name_chip: Optional[str]
@@ -37,14 +39,13 @@ class AnimalSchema(BaseModel):
         orm_mode = True
 
 
-@router.get("/list/", response=List[AnimalSchema])
+@router.get("/list_animal/", response=List[AnimalSchema])
 def list_animal(request):
-    # Recupera todos os animais, com os dados relacionados
     animals = Animal.objects.select_related('breed', 'coat').all()
 
-    # Converte os objetos ORM em dicionários compatíveis com o schema Pydantic
     animals_list = [
         {
+            'id': animal.id,
             'id_db_original': animal.id_db_original,
             'name': animal.name,
             'name_chip': animal.name_chip,
@@ -58,4 +59,6 @@ def list_animal(request):
         for animal in animals
     ]
 
-    return animals_list  # Retorna a lista de dicionários
+    return animals_list
+
+# End Animal
